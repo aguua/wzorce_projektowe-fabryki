@@ -37,7 +37,7 @@ public class TestSimpleFactory {
     @Test
     public void testOrderPizza() {
         Pizza pizza = factory.orderPizza("Capriciosa");
-        String expectedMessage = "Ordered Caprociosa pizza.";
+        String expectedMessage = "Ordered Capriciosa pizza.";
         assertEquals(expectedMessage, pizza.order());
     }
 
@@ -62,7 +62,7 @@ public class TestSimpleFactory {
         Pizza pizza = factory.orderPizza("Capriciosa");
 
         String expectedDumplingsMessage = "Ordered Salmon dumplings.";
-        String expectedPizzaMessage = "Ordered Caprociosa pizza.";
+        String expectedPizzaMessage = "Ordered Capriciosa pizza.";
         String expectedPastaMessage = "Ordered Bolognese pasta.";
 
         assertEquals(expectedPastaMessage, pasta.order());
