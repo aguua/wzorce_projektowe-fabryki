@@ -5,7 +5,7 @@ import products.pizza.*;
 
 import java.io.Serializable;
 
-public class PizzaFactory extends MethodFactory implements Serializable {
+public class PizzaFactory implements MethodFactory, Serializable {
     private static PizzaFactory instance;
 
     private PizzaFactory() {}
@@ -37,5 +37,10 @@ public class PizzaFactory extends MethodFactory implements Serializable {
             default:
                 throw new UnsupportedOperationException("No such a pizza in the menu!");
         }
+    }
+
+    @Override
+    public String orderProduct(String type) {
+        return getProduct(type).order();
     }
 }

@@ -5,7 +5,7 @@ import products.dumplings.*;
 
 import java.io.Serializable;
 
-public class DumplingsFactory extends MethodFactory implements Serializable {
+public class DumplingsFactory implements MethodFactory, Serializable{
     private static DumplingsFactory instance;
 
     private DumplingsFactory() {}
@@ -23,7 +23,7 @@ public class DumplingsFactory extends MethodFactory implements Serializable {
 
     @Override
     public Product getProduct(String type) {
-        switch (type = type.toLowerCase()){
+        switch (type.toLowerCase()){
             case "mushrooms":
                 return new Mushrooms();
             case "russian":
@@ -38,4 +38,10 @@ public class DumplingsFactory extends MethodFactory implements Serializable {
                 throw new UnsupportedOperationException("No such dumplings in the menu!");
         }
     }
+
+    @Override
+    public String orderProduct(String type) {
+        return getProduct(type).order();
+    }
+
 }

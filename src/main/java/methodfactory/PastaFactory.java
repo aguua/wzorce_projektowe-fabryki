@@ -5,7 +5,7 @@ import products.pasta.*;
 
 import java.io.Serializable;
 
-public class PastaFactory extends MethodFactory implements Serializable {
+public class PastaFactory implements MethodFactory, Serializable {
     private static PastaFactory instance;
 
     private PastaFactory() {}
@@ -36,5 +36,10 @@ public class PastaFactory extends MethodFactory implements Serializable {
             default:
                 throw new UnsupportedOperationException("No such a pasta in the menu!");
         }
+    }
+
+    @Override
+    public String orderProduct(String type) {
+        return getProduct(type).order();
     }
 }

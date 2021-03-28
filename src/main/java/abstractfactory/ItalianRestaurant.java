@@ -1,12 +1,9 @@
 package abstractfactory;
 
 import products.dumplings.Dumplings;
-import products.dumplings.Russian;
 import products.dumplings.Salmon;
 import products.pasta.Carbonara;
 import products.pasta.Pasta;
-import products.pasta.Tomato;
-import products.pizza.Capriciosa;
 import products.pizza.Italiana;
 import products.pizza.Pizza;
 
