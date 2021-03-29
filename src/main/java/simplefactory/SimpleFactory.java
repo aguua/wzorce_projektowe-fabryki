@@ -20,7 +20,7 @@ public class SimpleFactory implements Serializable {
         return instance;
     }
 
-    public Pizza orderPizza(String type) {
+    public Pizza getPizza (String type) {
         switch (type.toLowerCase()) {
             case "capriciosa":
                 return new Capriciosa();
@@ -37,7 +37,7 @@ public class SimpleFactory implements Serializable {
         }
     }
 
-    public Pasta orderPasta(String type) {
+    public Pasta getPasta (String type) {
         switch (type.toLowerCase()) {
             case "bolognese":
                 return new Bolognese();
@@ -53,8 +53,8 @@ public class SimpleFactory implements Serializable {
         }
     }
 
-    public Dumplings orderDumpling(String type) {
-        switch (type = type.toLowerCase()){
+    public Dumplings getDumpling (String type) {
+        switch (type.toLowerCase()){
             case "mushrooms":
                 return new Mushrooms();
             case "russian":
@@ -69,4 +69,8 @@ public class SimpleFactory implements Serializable {
                 throw new UnsupportedOperationException("No such dumplings in the menu!");
         }
     }
+
+    public String orderPizza(String type){ return getPizza(type).order();}
+    public String orderPasta(String type){ return getPasta(type).order();}
+    public String orderDumplings(String type){ return getDumpling(type).order();}
 }

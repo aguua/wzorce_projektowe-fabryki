@@ -21,13 +21,13 @@ public class PolishRestaurant implements AbstractFactory  {
     }
 
     @Override
-    public Pizza orderPizza() {
+    public Pizza getPizza() {
         return new Capriciosa();
     }
 
     @Override
-    public Pasta orderPasta() { return new Tomato();}
+    public Pasta getPasta() { return new Tomato();}
 
     @Override
-    public Dumplings orderDumplings() { return new Russian(); }
+    public Dumplings getDumplings() { return new Russian(); }
 }

@@ -5,7 +5,7 @@ import products.pasta.Pasta;
 import products.pizza.Pizza;
 
 public interface AbstractFactory {
-    Pizza orderPizza();
-    Pasta orderPasta();
-    Dumplings orderDumplings();
+    Pizza getPizza();
+    Pasta getPasta();
+    Dumplings getDumplings();
 }

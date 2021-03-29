@@ -15,9 +15,9 @@ public class TestAbstractFactory {
     @Test
     public void testOrderInPolishRestaurant() {
         Restaurant restaurant = new Restaurant(PolishRestaurant.getInstance());
-        Pizza pizza = restaurant.orderPizza();
-        Pasta pasta = restaurant.orderPasta();
-        Dumplings dumplings = restaurant.orderDumplings();
+        Pizza pizza = restaurant.getPizza();
+        Pasta pasta = restaurant.getPasta();
+        Dumplings dumplings = restaurant.getDumplings();
 
         String expectedMessageDum = "Ordered Russian dumplings.";
         String expectedMessagePizza = "Ordered Capriciosa pizza.";
@@ -31,9 +31,9 @@ public class TestAbstractFactory {
     @Test
     public void testOrderInItalianRestaurant() {
         Restaurant restaurant = new Restaurant(ItalianRestaurant.getInstance());
-        Pizza pizza = restaurant.orderPizza();
-        Pasta pasta = restaurant.orderPasta();
-        Dumplings dumplings = restaurant.orderDumplings();
+        Pizza pizza = restaurant.getPizza();
+        Pasta pasta = restaurant.getPasta();
+        Dumplings dumplings = restaurant.getDumplings();
 
         String expectedDumplingsMessage = "Ordered Salmon dumplings.";
         String expectedPizzaMessage = "Ordered Italiana pizza.";

@@ -11,15 +11,14 @@ public class Restaurant {
         this.abstractFactory = abstractFactory;
     }
 
-    public Pizza orderPizza() {
-        return abstractFactory.orderPizza();
+    public Pizza getPizza() { return abstractFactory.getPizza(); }
+
+    public Pasta getPasta() {
+        return abstractFactory.getPasta();
     }
 
-    public Pasta orderPasta() {
-        return abstractFactory.orderPasta();
+    public Dumplings getDumplings() {
+        return abstractFactory.getDumplings();
     }
 
-    public Dumplings orderDumplings() {
-        return abstractFactory.orderDumplings();
     }
-}

@@ -36,30 +36,30 @@ public class TestSimpleFactory {
 
     @Test
     public void testOrderPizza() {
-        Pizza pizza = factory.orderPizza("Capriciosa");
+        Pizza pizza = factory.getPizza("Capriciosa");
         String expectedMessage = "Ordered Capriciosa pizza.";
         assertEquals(expectedMessage, pizza.order());
     }
 
     @Test
     public void testOrderPasta() {
-        Pasta pasta = factory.orderPasta("Bolognese");
+        Pasta pasta = factory.getPasta("Bolognese");
         String expectedMessage = "Ordered Bolognese pasta.";
         assertEquals(expectedMessage, pasta.order());
     }
 
     @Test
     public void testOrderDumplings() {
-        Dumplings dumplings = factory.orderDumpling("salmon");
+        Dumplings dumplings = factory.getDumpling("salmon");
         String expectedMessage = "Ordered Salmon dumplings.";
         assertEquals(expectedMessage, dumplings.order());
     }
 
     @Test
     public void testOrderAllProducts() {
-        Dumplings dumplings = factory.orderDumpling("salmon");
-        Pasta pasta = factory.orderPasta("Bolognese");
-        Pizza pizza = factory.orderPizza("Capriciosa");
+        Dumplings dumplings = factory.getDumpling("salmon");
+        Pasta pasta = factory.getPasta("Bolognese");
+        Pizza pizza = factory.getPizza("Capriciosa");
 
         String expectedDumplingsMessage = "Ordered Salmon dumplings.";
         String expectedPizzaMessage = "Ordered Capriciosa pizza.";
@@ -72,9 +72,9 @@ public class TestSimpleFactory {
 
     @Test
     public void testProductClasses() {
-        Dumplings dumplings = factory.orderDumpling("salmon");
-        Pasta pasta = factory.orderPasta("Bolognese");
-        Pizza pizza = factory.orderPizza("Capriciosa");
+        Dumplings dumplings = factory.getDumpling("salmon");
+        Pasta pasta = factory.getPasta("Bolognese");
+        Pizza pizza = factory.getPizza("Capriciosa");
 
         assertThat(dumplings, instanceOf(Salmon.class));
         assertThat(pasta, instanceOf(Bolognese.class));

@@ -1,7 +1,6 @@
 package registrationclass;
 
 import products.Product;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Supplier;
@@ -9,6 +8,7 @@ import java.util.function.Supplier;
 public class NoReflectionFactory {
     private static NoReflectionFactory instance;
     private Map<String, Supplier<? extends Product>> registeredSuppliers = new HashMap<>();
+
 
     private NoReflectionFactory() {
     }
@@ -25,6 +25,13 @@ public class NoReflectionFactory {
 
     public Product getProduct(String type) {
         Supplier<? extends Product> supplier = registeredSuppliers.get(type);
-        return supplier != null ? supplier.get() : null;
+        if (supplier == null) {
+            throw new IllegalArgumentException();
+        } else return supplier.get();
     }
+
+    public String orderProduct(String type) {
+        return getProduct(type).order();
+    }
+
 }

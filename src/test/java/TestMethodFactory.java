@@ -2,19 +2,12 @@ import methodfactory.DumplingsFactory;
 import methodfactory.MethodFactory;
 import methodfactory.PastaFactory;
 import methodfactory.PizzaFactory;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+
 import org.junit.jupiter.api.Test;
 import products.Product;
-import products.dumplings.Dumplings;
 import products.dumplings.Salmon;
 import products.pasta.Bolognese;
-import products.pasta.Pasta;
 import products.pizza.Capriciosa;
-import products.pizza.Pizza;
-import simplefactory.SimpleFactory;
-
-import java.util.HashSet;
 
 import static org.hamcrest.core.IsInstanceOf.instanceOf;
 import static org.junit.Assert.assertThat;
